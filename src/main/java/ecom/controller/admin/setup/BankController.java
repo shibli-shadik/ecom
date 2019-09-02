@@ -60,7 +60,6 @@ public class BankController
     @GetMapping("/{id}/delete")
     public ModelAndView deleteBank(@PathVariable long id, Model model)
     {
-        System.out.println("test");
         model.addAttribute("message", bankService.deleteBank(id));
         model.addAttribute("banks", bankService.getAllBanks());
         return new ModelAndView("admin/bank/bankList");
