@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layoutAdmin}">
+    <head>
+        <title>Bank List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col" layout:fragment="content">
+                    <div>
+                        <label class="setupHeaderLabel">Bank List</label><br /> <br />
+                        <a class="btn btn-primary" href="/banks/create">Create a new bank</a>
+                        &nbsp;<label id="lblMessage" data-th-text="${message}"></label>
+                    </div>
+                    <hr />
+                    <div class="span12" style="width: 100%;">
+                        <table class="table table-striped display" id="banks" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th style="vertical-align: top;">Bank Code</th>
+                                    <th style="vertical-align: top;">Bank Name</th>
+                                    <th style="vertical-align: top; text-align: center;">Update</th>
+                                    <th style="vertical-align: top; text-align: center;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-th-each="bank : ${banks}">
+                                    <td class="message" th:utext="${bank.code}" style="padding-left: 20px;"></td>
+                                    <td class="message" data-th-text="${bank.name}" style="padding-left: 18px;"></td>
+
+                                    <td style="text-align: center;">
+                                        <a th:href="@{'/banks/{id}/edit'(id=${bank.id})}"
+                                           class="edit" th:attr="name=${bank.name}"> <img
+                                                src="/images/edit.png" alt="Edit"
+                                                style="width: 20px; height: 20px;" />
+                                        </a>
+                                    </td>
+                                        
+                                    <td style="text-align: center;">
+                                        <a
+                                            onclick="return confirm('Are you sure to delete this?');"
+                                            th:href="@{'/banks/{id}/delete'(id=${bank.id})}"
+                                            class="delete" th:attr="name=${bank.name}"> <img
+                                                src="/images/delete.png" alt="Delete"
+                                                style="width: 24px; height: 24px;" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="/js/setup/bank.js"></script>

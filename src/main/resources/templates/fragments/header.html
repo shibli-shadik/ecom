@@ -1,0 +1,65 @@
+<div th:fragment="header">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-fixed-top"
+         style="background-color: #4286f4; border-color: #080808;">
+        <div style="padding-top: 5px;">
+            <div class="navbar-header" style="float: left; padding-left: 10px;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <!--<label class="company-name" >ITCL</label>-->
+                            <!--<img src="/images/city-bank-logo.png" style="width: 30px; height: 30px;"/>-->
+                            <label style="color: white; padding-top: 5px;">Public page</label>
+                        </td>
+                    </tr>			
+                </table>
+            </div>
+                
+            <div id="navbar">
+                <div class="navigation">
+                    <nav>					
+                        <ul class="nav topnav bold">
+                            
+                            <li><a href="/home">Home </a></li>
+                                
+                            <li class="dropdown"><a href="#">Group A<i class="icon-angle-down"></i></a>
+                                <ul class="dropdown-menu bold">
+                                    <li><a href="/menu1">Menu A</a></li>
+                                    <li><a href="/menu2">Menu B</a></li>
+                                </ul>
+                            </li>
+                                
+                            <li class="dropdown"><a href="#">Group B<i class="icon-angle-down"></i></a>
+                                <ul class="dropdown-menu bold">
+                                    <li><a href="/menu1">Menu A</a></li>
+                                    <li><a href="/menu2">Menu B</a></li>
+                                    
+                                    <li class="dropdown">
+                                        <a href="#">Menu Cccccccccgggg &nbsp;&nbsp;&nbsp;<i class="icon-angle-right"></i></a>
+                                            <ul style="display: none;" 
+                                                class="dropdown-menu sub-menu-level1 bold">
+                                                <li><a href="/menuc1">Menu C child 1</a></li>
+                                                <li><a href="/menuc2">Menu C child 2</a></li>
+                                            </ul>
+                                    </li>
+                                    
+                                    <li><a href="/menu2">Menu F</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="dropdown"><a href="#">Group D<i class="icon-angle-down"></i></a>
+                                <ul class="dropdown-menu bold">
+                                    <li><a href="/menu1">Menu A</a></li>
+                                    <li><a href="/menu2">Menu B</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+</div>
